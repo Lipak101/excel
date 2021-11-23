@@ -1,0 +1,35 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.IO.Compression;
+
+namespace Cellblock_negate
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string sourceFile = @"C:\Users\76923780951\Desktop\I_G\vedett\vedett.xlsx";
+
+
+            System.IO.FileInfo fi = new System.IO.FileInfo(sourceFile);
+            if (fi.Exists)
+            {
+                fi.MoveTo(@"C:\Users\76923780951\Desktop\I_G\vedett\vedett.zip");
+                Console.WriteLine("A módosítás zip-re megtörtént.");
+
+            }
+
+
+            string zipFilePath = @"C:\Users\76923780951\Desktop\I_G\vedett\vedett.zip";
+            string extractionPath = @"C:\Users\76923780951\Desktop\I_G\vedett\";
+            ZipFile.ExtractToDirectory(zipFilePath, extractionPath);
+            Console.WriteLine("A kicsomagolás megtörtént!!!%!554");
+
+
+            Console.ReadKey();
+        }
+    }
+}
